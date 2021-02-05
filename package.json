@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "customize-cra": "^1.0.0",
+    "dotenv": "^8.2.0",
     "firebase": "^8.2.5",
     "fuse.js": "^6.4.6",
     "normalize.css": "^8.0.1",

@@ -1,5 +1,6 @@
+import { Accordion } from '@/components';
 import React from 'react';
-import { OptForm, Accordion } from '@/components';
+import OptFormContainer from './opt-form';
 
 type FAQDataType = {
   id: number;
@@ -20,14 +21,7 @@ const FAQsContainer: React.FC = () => {
         </Accordion.Item>
       ))}
 
-      <OptForm>
-        <OptForm.Input placeholder="Email address" />
-        <OptForm.Button>Try it now</OptForm.Button>
-        <OptForm.Break />
-        <OptForm.Text>
-          Ready to watch? Enter your email to create or restart your membership.
-        </OptForm.Text>
-      </OptForm>
+      <OptFormContainer />
     </Accordion>
   );
 };
