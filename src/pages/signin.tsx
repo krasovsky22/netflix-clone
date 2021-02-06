@@ -46,7 +46,7 @@ const SignIn: React.FC = () => {
 
           <Form.Base onSubmit={handleSignIn} method="POST">
             <Form.Input
-              placeholder="Email address"
+              placeholder="Email Address"
               value={emailAddress}
               onChange={({ target }: React.ChangeEvent<HTMLInputElement>) =>
                 setEmailAddress(target.value)

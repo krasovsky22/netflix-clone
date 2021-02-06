@@ -80,7 +80,6 @@ export const Submit = styled.button`
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
-  margin: 24px 0 12px;
   padding: 16px;
   color: white;
   cursor: pointer;

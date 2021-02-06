@@ -1,6 +1,5 @@
-import { createContext } from 'react';
 import Firebase from 'firebase/app';
-import { firebase } from '@lib/firebase.prod';
+import { createContext } from 'react';
 
 type FirebaseContextType = {
   firebase?: Firebase.app.App;

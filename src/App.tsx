@@ -1,27 +1,49 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import { Browse, Home, SignIn, SignUp } from '@/pages';
 import * as ROUTES from '@constants/routes';
-import { Home, Browse, SignIn, SignUp } from '@/pages';
+import { IsUserRedirect, ProtectedRoute } from '@helpers/routes';
+import React from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { useAuthListener } from '@/hooks';
 
 function App() {
+  const { user } = useAuthListener();
+
+  console.log(user);
+
   return (
     <Router>
-      <Route exact path={ROUTES.HOME}>
-        <Home />
-      </Route>
+      <Switch>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.SIGN_UP}
+          exact
+        >
+          <SignUp />
+        </IsUserRedirect>
 
-      <Route exact path={ROUTES.SIGN_UP}>
-        <SignUp />
-      </Route>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.SIGN_IN}
+          exact
+        >
+          <SignIn />
+        </IsUserRedirect>
 
-      <Route exact path={ROUTES.SIGN_IN}>
-        <SignIn />
-      </Route>
+        <IsUserRedirect
+          user={user}
+          loggedInPath={ROUTES.BROWSE}
+          path={ROUTES.HOME}
+          exact
+        >
+          <Home />
+        </IsUserRedirect>
 
-      <Route exact path={ROUTES.BROWSE}>
-        <Browse />
-      </Route>
+        <ProtectedRoute exact path={ROUTES.BROWSE} user={user}>
+          <Browse />
+        </ProtectedRoute>
+      </Switch>
     </Router>
   );
 }
