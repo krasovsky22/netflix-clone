@@ -15,3 +15,8 @@ export type DatabaseContentType = {
 export type NetflixContentType = DatabaseContentType & {
   docId: string;
 };
+
+export type NetflixProfileType = {
+  displayName: string | null;
+  photoURL: string | null;
+};

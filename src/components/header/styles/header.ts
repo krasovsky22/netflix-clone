@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-type BackgroundType = {
+export type BackgroundType = {
   src?: string;
 };
 
@@ -27,7 +27,7 @@ export const Background = styled.div<BackgroundType>`
   flex-direction: column;
   ${({ src }) =>
     (src
-      ? `background: url(${src})`
+      ? `background: url(/images/misc/${src}.jpg)`
       : `background: url(/images/misc/home-bg.jpg)`) +
     'top left / cover no-repeat'}
 `;

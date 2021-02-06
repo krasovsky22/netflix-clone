@@ -5,9 +5,16 @@ import {
   LinkType,
   WithChildrenType,
 } from '@components/common-types';
-import { Container, ButtonLink, Background, Logo } from './styles/header';
+import {
+  Container,
+  ButtonLink,
+  Background,
+  Logo,
+  BackgroundType,
+} from './styles/header';
 
-const Header = ({ children, ...rest }: WithChildrenType) => {
+const Header = ({ children, ...rest }: WithChildrenType & BackgroundType) => {
+  console.log('here', rest);
   return <Background {...rest}>{children}</Background>;
 };
 

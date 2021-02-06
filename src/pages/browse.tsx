@@ -1,6 +1,7 @@
 import { useContent } from '@/hooks';
 import { selectionFilter } from '@/utils';
 import React from 'react';
+import { BrowseContainer } from '@/containers';
 
 type BrowsePropsType = {};
 
@@ -14,6 +15,6 @@ const Browse: React.FC<BrowsePropsType> = (props) => {
   //we need slides
   //pass it to the browse container
 
-  return <div>Browse Component</div>;
+  return <BrowseContainer slides={slides} />;
 };
 export default Browse;
