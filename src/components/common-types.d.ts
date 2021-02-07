@@ -23,3 +23,7 @@ export type FormType = {
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
   method: FormMethodsType;
 };
+
+export type ClickableType = {
+  onClick?: () => void;
+};
