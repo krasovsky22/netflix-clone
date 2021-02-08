@@ -1,24 +1,22 @@
-import { Form } from '@/components';
-import * as ROUTES from '@/constants/routes';
-import { FooterContainer, HeaderContainer } from '@/containers';
-import { FirebaseContext } from '@context/firebase';
-import React, { useCallback, useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Form } from "@/components";
+import * as ROUTES from "@/constants/routes";
+import { FooterContainer, HeaderContainer } from "@/containers";
+import { FirebaseContext } from "@context/firebase";
+import React, { useCallback, useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const SignIn: React.FC = () => {
   const { firebase } = useContext(FirebaseContext);
   const history = useHistory();
-  const [emailAddress, setEmailAddress] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [error, setError] = useState<string>('');
+  const [emailAddress, setEmailAddress] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
-  const isInvalid = password === '' || emailAddress === '';
+  const isInvalid = password === "" || emailAddress === "";
 
   const handleSignIn = useCallback(
     (event: React.FormEvent) => {
       event.preventDefault();
-
-      console.log('here', emailAddress, password);
 
       firebase
         ?.auth()
@@ -28,12 +26,12 @@ const SignIn: React.FC = () => {
           history.push(ROUTES.BROWSE);
         })
         .catch((error) => {
-          setEmailAddress('');
-          setPassword('');
+          setEmailAddress("");
+          setPassword("");
           setError(error.message);
         });
     },
-    [emailAddress, password]
+    [emailAddress, password],
   );
 
   return (
@@ -67,12 +65,10 @@ const SignIn: React.FC = () => {
           </Form.Base>
 
           <Form.Text>
-            New to Netflix?{' '}
-            <Form.Link to={ROUTES.SIGN_UP}>Sign up now.</Form.Link>
+            New to Netflix? <Form.Link to={ROUTES.SIGN_UP}>Sign up now.</Form.Link>
           </Form.Text>
           <Form.TextSmall>
-            This page is protected by Google reCAPTCHA to ensure you're not a
-            bot. Learn more.{' '}
+            This page is protected by Google reCAPTCHA to ensure you`re not a bot. Learn more.
           </Form.TextSmall>
         </Form>
       </HeaderContainer>

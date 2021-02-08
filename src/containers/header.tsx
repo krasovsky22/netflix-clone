@@ -1,13 +1,9 @@
-import React from 'react';
-import { Header } from '@/components';
-import * as ROUTES from '@constants/routes';
-import { WithChildrenType } from '@components/common-types';
+import React from "react";
+import { Header } from "@/components";
+import * as ROUTES from "@constants/routes";
+import { WithChildrenType } from "@components/common-types";
 
-type HeaderContainerPropsType = {};
-
-const HeaderContainer: React.FC<
-  HeaderContainerPropsType & WithChildrenType
-> = ({ children, ...rest }) => {
+const HeaderContainer: React.FC<WithChildrenType> = ({ children, ...rest }) => {
   return (
     <Header {...rest}>
       <Header.Frame>

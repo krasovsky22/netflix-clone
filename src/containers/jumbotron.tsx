@@ -1,5 +1,5 @@
-import React from 'react';
-import Jumbotron, { JumbotronPropsType } from '@components/jumbotron';
+import React from "react";
+import Jumbotron, { JumbotronPropsType } from "@components/jumbotron";
 
 type JumboDataType = JumbotronPropsType & {
   id: number;
@@ -9,7 +9,7 @@ type JumboDataType = JumbotronPropsType & {
   alt: string;
 };
 
-const jumboData: JumboDataType[] = require('@fixtures/jumbo.json');
+const jumboData: JumboDataType[] = require("@fixtures/jumbo.json");
 
 const JumbotronContainer: React.FC = () => {
   return (

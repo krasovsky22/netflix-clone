@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export type WithChildrenType = {
   children: React.ReactNode;
@@ -17,10 +17,10 @@ export type LinkType = {
   to: string;
 };
 
-export type FormMethodsType = 'POST' | 'GET';
+export type FormMethodsType = "POST" | "GET";
 
 export type FormType = {
-  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  onSubmit: (event: Event<HTMLFormElement>) => void;
   method: FormMethodsType;
 };
 

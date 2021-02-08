@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './app';
-import reportWebVitals from './reportWebVitals';
-import GlobalStyles from './global-styles';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./app";
+import reportWebVitals from "./reportWebVitals";
+import GlobalStyles from "./global-styles";
 
-import { FirebaseContext } from '@context/firebase';
-import { firebase } from '@lib/firebase.prod';
+import { FirebaseContext } from "@context/firebase";
+import { firebase } from "@lib/firebase.prod";
 
-import 'normalize.css';
+import "normalize.css";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,7 +16,7 @@ ReactDOM.render(
       <App />
     </FirebaseContext.Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root"),
 );
 
 // If you want to start measuring performance in your app, pass a function

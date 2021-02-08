@@ -1,5 +1,5 @@
-import React from 'react';
-import { LockBody, Picture, ReleaseBody, Spinner } from './styles/loading';
+import React from "react";
+import { LockBody, Picture, ReleaseBody, Spinner } from "./styles/loading";
 
 type LoadingPropsType = {
   src: string;

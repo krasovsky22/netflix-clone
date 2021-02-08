@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro';
-import { ImageType } from '@components/common-types';
+import styled from "styled-components/macro";
+import { ImageType } from "@components/common-types";
 
 export const Title = styled.p`
   font-size: 24px;
@@ -48,14 +48,13 @@ export const Text = styled.p`
 `;
 
 type GroupType = {
-  flexDirection?: 'row' | 'column';
+  flexDirection?: "row" | "column";
   alignItems?: string;
   margin?: string;
 };
 export const Group = styled.div<GroupType>`
   display: flex;
-  flex-direction: ${({ flexDirection }) =>
-    flexDirection === 'row' ? 'row' : 'column'};
+  flex-direction: ${({ flexDirection }) => (flexDirection === "row" ? "row" : "column")};
   ${({ alignItems }) => alignItems && `align-items: ${alignItems}`};
   ${({ margin }) => margin && `margin: ${margin}`};
 
@@ -138,13 +137,12 @@ export const Image = styled.img`
 `;
 
 type FeatureTextType = {
-  fontWeight?: 'bold' | 'normal';
+  fontWeight?: "bold" | "normal";
 };
 export const FeatureText = styled.p<FeatureTextType>`
   font-size: 18px;
   color: white;
-  font-weight: ${({ fontWeight }) =>
-    fontWeight === 'bold' ? 'bold' : 'normal'};
+  font-weight: ${({ fontWeight }) => (fontWeight === "bold" ? "bold" : "normal")};
   margin: 0;
 
   @media (max-width: 600px) {
@@ -200,7 +198,7 @@ type MaturityType = {
   rating: number;
 };
 export const Maturity = styled.p<MaturityType>`
-  background-color: ${({ rating }) => (rating >= 15 ? 'red' : 'green')};
+  background-color: ${({ rating }) => (rating >= 15 ? "red" : "green")};
   border-radius: 15px;
   width: 25px;
   padding: 5px;

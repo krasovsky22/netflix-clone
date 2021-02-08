@@ -1,6 +1,6 @@
-import { Accordion } from '@/components';
-import React from 'react';
-import OptFormContainer from './opt-form';
+import { Accordion } from "@/components";
+import React from "react";
+import OptFormContainer from "./opt-form";
 
 type FAQDataType = {
   id: number;
@@ -8,7 +8,7 @@ type FAQDataType = {
   body: string;
 };
 
-const faqsData: FAQDataType[] = require('@fixtures/faqs.json');
+const faqsData: FAQDataType[] = require("@fixtures/faqs.json");
 
 const FAQsContainer: React.FC = () => {
   return (

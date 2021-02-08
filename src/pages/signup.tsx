@@ -1,21 +1,20 @@
-import { Form } from '@/components';
-import * as ROUTES from '@/constants/routes';
-import { FooterContainer, HeaderContainer } from '@/containers';
-import { FirebaseContext } from '@context/firebase';
-import React, { useCallback, useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { firebase } from '@lib/firebase.prod';
+import { Form } from "@/components";
+import * as ROUTES from "@/constants/routes";
+import { FooterContainer, HeaderContainer } from "@/containers";
+import { FirebaseContext } from "@context/firebase";
+import React, { useCallback, useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const SignUp: React.FC = () => {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
-  const [firstName, setFirstName] = useState<string>('');
-  const [emailAddress, setEmailAddress] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [error, setError] = useState<string>('');
+  const [firstName, setFirstName] = useState<string>("");
+  const [emailAddress, setEmailAddress] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
-  const isInvalid = firstName === '' || password === '' || emailAddress === '';
+  const isInvalid = firstName === "" || password === "" || emailAddress === "";
 
   const handleSignUp = useCallback(
     (event: React.FormEvent) => {
@@ -34,13 +33,11 @@ const SignUp: React.FC = () => {
         history.push(ROUTES.BROWSE);
       };
 
-      signUpProcess()
-        .then(() => {})
-        .catch((error) => {
-          setError(error.message);
-        });
+      signUpProcess().catch((error) => {
+        setError(error.message);
+      });
     },
-    [firstName, emailAddress, password]
+    [firstName, emailAddress, password],
   );
 
   return (
@@ -81,12 +78,10 @@ const SignUp: React.FC = () => {
           </Form.Base>
 
           <Form.Text>
-            Already a user?{' '}
-            <Form.Link to={ROUTES.SIGN_IN}>Sign in now.</Form.Link>
+            Already a user? <Form.Link to={ROUTES.SIGN_IN}>Sign in now.</Form.Link>
           </Form.Text>
           <Form.TextSmall>
-            This page is protected by Google reCAPTCHA to ensure you're not a
-            bot. Learn more.{' '}
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.{" "}
           </Form.TextSmall>
         </Form>
       </HeaderContainer>

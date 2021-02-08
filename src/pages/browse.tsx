@@ -1,15 +1,13 @@
-import { useContent } from '@/hooks';
-import { selectionFilter } from '@/utils';
-import React from 'react';
-import { BrowseContainer } from '@/containers';
+import { useContent } from "@/hooks";
+import { selectionFilter } from "@/utils";
+import React from "react";
+import { BrowseContainer } from "@/containers";
 
-type BrowsePropsType = {};
-
-const Browse: React.FC<BrowsePropsType> = (props) => {
+const Browse: React.FC = () => {
   //we need the series and the films
 
-  const { series } = useContent('series');
-  const { films } = useContent('films');
+  const { series } = useContent("series");
+  const { films } = useContent("films");
 
   const slides = selectionFilter({ series, films });
   //we need slides

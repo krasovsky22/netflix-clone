@@ -1,7 +1,7 @@
-import { SIGN_IN } from '@/constants/routes';
-import { AuthUserType } from '@/types';
-import React from 'react';
-import { Route, Redirect, RouteProps } from 'react-router-dom';
+import { SIGN_IN } from "@/constants/routes";
+import { AuthUserType } from "@/types";
+import React from "react";
+import { Route, Redirect, RouteProps } from "react-router-dom";
 
 interface IsUserRedirectType extends RouteProps {
   user: AuthUserType;
@@ -38,11 +38,7 @@ interface ProtectedRouteType extends RouteProps {
   children: React.ReactNode;
 }
 
-export const ProtectedRoute: React.FC<ProtectedRouteType> = ({
-  user,
-  children,
-  ...rest
-}) => {
+export const ProtectedRoute: React.FC<ProtectedRouteType> = ({ user, children, ...rest }) => {
   return (
     <Route
       {...rest}
@@ -52,9 +48,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteType> = ({
         }
 
         if (!user) {
-          return (
-            <Redirect to={{ pathname: SIGN_IN, state: { from: location } }} />
-          );
+          return <Redirect to={{ pathname: SIGN_IN, state: { from: location } }} />;
         }
 
         return null;

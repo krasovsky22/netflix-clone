@@ -1,7 +1,7 @@
-import Firebase from 'firebase/app';
+import Firebase from "firebase/app";
 
-require('firebase/firestore');
-require('firebase/auth');
+require("firebase/firestore");
+require("firebase/auth");
 
 // we need to seed the database;
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { WithChildrenType } from '@components/common-types';
+import React from "react";
+import { WithChildrenType } from "@components/common-types";
 
 import {
   Container,
@@ -10,15 +10,11 @@ import {
   SubTitle,
   Title,
   Item,
-} from './styles/jumbotron';
+} from "./styles/jumbotron";
 
 export type JumbotronPropsType = InnerPropsType & WithChildrenType;
 
-export default function Jumbotron({
-  direction,
-  children,
-  ...rest
-}: JumbotronPropsType) {
+export default function Jumbotron({ direction, children, ...rest }: JumbotronPropsType) {
   return (
     <Item {...rest}>
       <Inner direction={direction}>{children}</Inner>

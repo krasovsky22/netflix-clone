@@ -1,4 +1,4 @@
-import Firebase from 'firebase/app';
+import Firebase from "firebase/app";
 
 export type UserType = Firebase.User;
 export type AuthUserType = UserType | null;

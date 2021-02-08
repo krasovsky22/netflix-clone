@@ -1,5 +1,5 @@
-import { NetflixContentType } from '@/types';
-import { capitalize as _capitalize } from 'lodash';
+import { NetflixContentType } from "@/types";
+import { capitalize as _capitalize } from "lodash";
 
 type SelectionFilterPropsType = {
   series: NetflixContentType[];
@@ -15,19 +15,10 @@ type SelectionFilterReturnType = {
   films: SelectionType[];
 };
 
-const seriesTypes = [
-  'documentaries',
-  'comedies',
-  'children',
-  'crime',
-  'feel-good',
-];
-const filmsTypes = ['drama', 'thriller', 'children', 'suspense', 'romance'];
+const seriesTypes = ["documentaries", "comedies", "children", "crime", "feel-good"];
+const filmsTypes = ["drama", "thriller", "children", "suspense", "romance"];
 
-const filterSeriesFunction = (
-  type: string,
-  moviesData: NetflixContentType[]
-): SelectionType => ({
+const filterSeriesFunction = (type: string, moviesData: NetflixContentType[]): SelectionType => ({
   title: _capitalize(type),
   data: moviesData.filter((show) => show.genre === type),
 });
@@ -37,11 +28,7 @@ export default function selectionFilter({
   films,
 }: SelectionFilterPropsType): SelectionFilterReturnType {
   return {
-    series: seriesTypes.map((seriesType) =>
-      filterSeriesFunction(seriesType, series)
-    ),
-    films: filmsTypes.map((seriesType) =>
-      filterSeriesFunction(seriesType, films)
-    ),
+    series: seriesTypes.map((seriesType) => filterSeriesFunction(seriesType, series)),
+    films: filmsTypes.map((seriesType) => filterSeriesFunction(seriesType, films)),
   };
 }

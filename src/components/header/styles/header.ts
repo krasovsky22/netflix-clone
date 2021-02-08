@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import styled from "styled-components/macro";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -28,8 +28,7 @@ export const Background = styled.div<BackgroundType>`
   ${({ src }) =>
     (src
       ? `background: url(/images/misc/${src}.jpg)`
-      : `background: url(/images/misc/home-bg.jpg)`) +
-    'top left / cover no-repeat'};
+      : `background: url(/images/misc/home-bg.jpg)`) + "top left / cover no-repeat"};
 
   @media (max-width: 1100px) {
     background: none;
@@ -103,7 +102,7 @@ export const Link = styled.p<ActiveLink>`
   color: white;
   text-decoration: none;
   margin-right: 30px;
-  font-weight: ${({ active = false }) => (active ? '700' : 'normal')};
+  font-weight: ${({ active = false }) => (active ? "700" : "normal")};
   cursor: pointer;
 
   &:hover {
@@ -212,9 +211,9 @@ export const SearchInput = styled.input<SearchInputType>`
   height: 30px;
   font-size: 14px;
 
-  margin-left: ${({ active }) => (active ? '10px;' : '0;')};
-  width: ${({ active }) => (active ? '200px;' : '0;')};
-  opacity: ${({ active }) => (active ? '1;' : '0;')};
+  margin-left: ${({ active }) => (active ? "10px;" : "0;")};
+  width: ${({ active }) => (active ? "200px;" : "0;")};
+  opacity: ${({ active }) => (active ? "1;" : "0;")};
 `;
 
 export const PlayButton = styled.button`

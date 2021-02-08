@@ -1,25 +1,15 @@
-import React from 'react';
-import {
-  JumbotronContainer,
-  FooterContainer,
-  FAQsContainer,
-  HeaderContainer,
-} from '@/containers';
-import { Feature } from '@/components';
-import OptFormContainer from './../containers/opt-form';
-type HomePropsType = {};
+import { Feature } from "@/components";
+import { FAQsContainer, FooterContainer, HeaderContainer, JumbotronContainer } from "@/containers";
+import React from "react";
+import OptFormContainer from "./../containers/opt-form";
 
-const Home: React.FC<HomePropsType> = (props) => {
+const Home: React.FC = () => {
   return (
     <>
       <HeaderContainer>
         <Feature>
-          <Feature.Title>
-            Unlimited films, TV programmes and more.
-          </Feature.Title>
-          <Feature.SubTitle>
-            Watch anywhere. Cancel at any time.
-          </Feature.SubTitle>
+          <Feature.Title>Unlimited films, TV programmes and more.</Feature.Title>
+          <Feature.SubTitle>Watch anywhere. Cancel at any time.</Feature.SubTitle>
           <OptFormContainer />
         </Feature>
       </HeaderContainer>

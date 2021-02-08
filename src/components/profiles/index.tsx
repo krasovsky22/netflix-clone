@@ -1,6 +1,6 @@
-import React, { MouseEvent } from 'react';
-import { ImageType, WithChildrenType } from '@components/common-types';
-import { Container, Title, List, Item, Picture, Name } from './styles/profiles';
+import React, { MouseEvent } from "react";
+import { ImageType, WithChildrenType } from "@components/common-types";
+import { Container, Title, List, Item, Picture, Name } from "./styles/profiles";
 
 const Profiles = ({ children, ...rest }: WithChildrenType) => {
   return <Container {...rest}>{children}</Container>;
@@ -24,10 +24,7 @@ Profiles.Item = ({ children, ...rest }: WithChildrenType & ProfileItemType) => {
 
 Profiles.Picture = ({ src, ...rest }: ImageType) => {
   return (
-    <Picture
-      src={src !== '' ? `/images/users/${src}.png` : '/images/misc/loading.gif'}
-      {...rest}
-    />
+    <Picture src={src !== "" ? `/images/users/${src}.png` : "/images/misc/loading.gif"} {...rest} />
   );
 };
 

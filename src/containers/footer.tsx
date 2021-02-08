@@ -1,9 +1,7 @@
-import Footer from '@components/footer';
-import React from 'react';
+import Footer from "@components/footer";
+import React from "react";
 
-type FooterContainerPropsType = {};
-
-const FooterContainer: React.FC<FooterContainerPropsType> = () => {
+const FooterContainer: React.FC = () => {
   return (
     <Footer>
       <Footer.Title>Questions? Contact us.</Footer.Title>

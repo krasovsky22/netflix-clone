@@ -1,6 +1,6 @@
-import React from 'react';
-import { WithChildrenType } from '@components/common-types';
-import { Container, Title, SubTitle } from './styles/feature';
+import React from "react";
+import { WithChildrenType } from "@components/common-types";
+import { Container, Title, SubTitle } from "./styles/feature";
 
 const Feature = ({ children, ...rest }: WithChildrenType) => {
   return <Container {...rest}>{children}</Container>;

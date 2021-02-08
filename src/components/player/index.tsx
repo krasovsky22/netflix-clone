@@ -1,7 +1,7 @@
-import { ImageType, WithChildrenType } from '@components/common-types';
-import React, { createContext, useContext, useState } from 'react';
-import ReactDOM from 'react-dom';
-import { Container, Inner, Overlay, Button } from './styles/player';
+import { ImageType, WithChildrenType } from "@components/common-types";
+import React, { createContext, useContext, useState } from "react";
+import ReactDOM from "react-dom";
+import { Button, Container, Inner, Overlay } from "./styles/player";
 
 const defaultContextValue = {
   showPlayer: false,
@@ -20,7 +20,7 @@ const Player = ({ children, ...rest }: WithChildrenType) => {
 
 Player.Video = ({ src, ...rest }: ImageType) => {
   const { showPlayer, setShowPlayer } = useContext(PlayerContext);
-  console.log('show player', showPlayer);
+  console.log("show player", showPlayer);
 
   if (showPlayer) {
     return ReactDOM.createPortal(
@@ -31,7 +31,7 @@ Player.Video = ({ src, ...rest }: ImageType) => {
           </video>
         </Inner>
       </Overlay>,
-      document.body
+      document.body,
     );
   }
 
@@ -41,11 +41,7 @@ Player.Video = ({ src, ...rest }: ImageType) => {
 Player.Button = ({ ...rest }) => {
   const { showPlayer, setShowPlayer } = useContext(PlayerContext);
 
-  return (
-    <Button onClick={() => setShowPlayer((showPlayer) => !showPlayer)}>
-      Play
-    </Button>
-  );
+  return <Button onClick={() => setShowPlayer((showPlayer) => !showPlayer)}>Play</Button>;
 };
 
 export default Player;

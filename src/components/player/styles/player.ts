@@ -1,7 +1,7 @@
-import { ClickableType } from '@/components/common-types';
-import styled from 'styled-components/macro';
-import { Link } from './../../header/styles/header';
-import Accordion from './../../accordion/index';
+import { ClickableType } from "@/components/common-types";
+import styled from "styled-components/macro";
+import { Link } from "./../../header/styles/header";
+import Accordion from "./../../accordion/index";
 
 export const Container = styled.div``;
 

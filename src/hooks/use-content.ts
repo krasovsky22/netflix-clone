@@ -1,8 +1,8 @@
-import { useState, useContext, useEffect } from 'react';
-import { FirebaseContext } from '@context/firebase';
-import { DatabaseContentType, NetflixContentType } from '@/types';
+import { useState, useContext, useEffect } from "react";
+import { FirebaseContext } from "@context/firebase";
+import { DatabaseContentType, NetflixContentType } from "@/types";
 
-type ContentTargetType = 'films' | 'series';
+type ContentTargetType = "films" | "series";
 export default function useContent(target: ContentTargetType) {
   const [content, setContent] = useState<NetflixContentType[]>([]);
 

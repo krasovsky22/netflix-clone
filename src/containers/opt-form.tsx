@@ -1,9 +1,7 @@
-import React from 'react';
-import { OptForm } from '@/components';
+import React from "react";
+import { OptForm } from "@/components";
 
-type OptFormContainerPropsType = {};
-
-const OptFormContainer: React.FC<OptFormContainerPropsType> = () => {
+const OptFormContainer: React.FC = () => {
   return (
     <OptForm>
       <OptForm.Input placeholder="Email address" />

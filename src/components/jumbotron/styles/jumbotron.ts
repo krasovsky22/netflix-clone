@@ -1,7 +1,7 @@
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
 export type InnerPropsType = {
-  direction?: 'row' | 'row-reverse';
+  direction?: "row" | "row-reverse";
 };
 
 export const Item = styled.div`
@@ -15,7 +15,7 @@ export const Item = styled.div`
 export const Inner = styled.div<InnerPropsType>`
   display: flex;
   align-items: center;
-  flex-direction: ${({ direction = 'row' }) => direction};
+  flex-direction: ${({ direction = "row" }) => direction};
   justify-content: space-between;
   max-width: 1100px;
   margin: auto;

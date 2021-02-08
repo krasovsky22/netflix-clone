@@ -1,6 +1,6 @@
-import { WithChildrenType } from '@components/common-types';
-import React from 'react';
-import { Break, Button, Container, Input, Text } from './styles/opt-form';
+import { WithChildrenType } from "@components/common-types";
+import React from "react";
+import { Break, Button, Container, Input, Text } from "./styles/opt-form";
 
 const OptForm = ({ children, ...rest }: WithChildrenType) => {
   return <Container {...rest}>{children}</Container>;

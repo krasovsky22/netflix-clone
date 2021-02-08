@@ -1,11 +1,6 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
-import { Link as ReactRouterLink } from 'react-router-dom';
-import {
-  ImageType,
-  LinkType,
-  WithChildrenType,
-  ClickableType,
-} from '@components/common-types';
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { Link as ReactRouterLink } from "react-router-dom";
+import { ImageType, LinkType, WithChildrenType, ClickableType } from "@components/common-types";
 import {
   Container,
   ButtonLink,
@@ -25,16 +20,13 @@ import {
   SearchIcon,
   SearchInput,
   PlayButton,
-} from './styles/header';
+} from "./styles/header";
 
 const Header = ({ children, ...rest }: WithChildrenType & BackgroundType) => {
   return <Background {...rest}>{children}</Background>;
 };
 
-Header.TextLink = ({
-  children,
-  ...rest
-}: WithChildrenType & ActiveLink & ClickableType) => {
+Header.TextLink = ({ children, ...rest }: WithChildrenType & ActiveLink & ClickableType) => {
   return <Link {...rest}>{children}</Link>;
 };
 
@@ -95,9 +87,7 @@ Header.Search = ({ searchTerm, setSearchTerm, ...rest }: SearchType) => {
 
   return (
     <Search {...rest}>
-      <SearchIcon
-        onClick={() => setSearchActive((searchActive) => !searchActive)}
-      >
+      <SearchIcon onClick={() => setSearchActive((searchActive) => !searchActive)}>
         <img src="/images/icons/search.png" alt="Search" />
       </SearchIcon>
       <SearchInput

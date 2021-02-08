@@ -1,17 +1,14 @@
-import React, { Dispatch, SetStateAction } from 'react';
-import { Header, Profiles } from '@/components';
-import { AuthUserType, NetflixProfileType } from '@/types';
-import * as ROUTES from '@constants/routes';
+import React, { Dispatch, SetStateAction } from "react";
+import { Header, Profiles } from "@/components";
+import { AuthUserType, NetflixProfileType } from "@/types";
+import * as ROUTES from "@constants/routes";
 
 type ProfilesContainerPropsType = {
   user: AuthUserType;
   setProfiles: Dispatch<SetStateAction<NetflixProfileType>>;
 };
 
-const SelectProfilesContainer: React.FC<ProfilesContainerPropsType> = ({
-  user,
-  setProfiles,
-}) => {
+const SelectProfilesContainer: React.FC<ProfilesContainerPropsType> = ({ user, setProfiles }) => {
   return (
     <>
       <Header>
@@ -31,7 +28,7 @@ const SelectProfilesContainer: React.FC<ProfilesContainerPropsType> = ({
               })
             }
           >
-            <Profiles.Picture src={user?.photoURL ?? ''} />
+            <Profiles.Picture src={user?.photoURL ?? ""} />
             <Profiles.Name>{user?.displayName}</Profiles.Name>
           </Profiles.Item>
         </Profiles.List>

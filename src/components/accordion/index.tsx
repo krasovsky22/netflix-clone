@@ -1,14 +1,7 @@
-import React, { useState, createContext, useContext } from 'react';
-import { WithChildrenType } from '@components/common-types';
+import React, { useState, createContext, useContext } from "react";
+import { WithChildrenType } from "@components/common-types";
 
-import {
-  Container,
-  Title,
-  Item,
-  Inner,
-  Header,
-  Body,
-} from './styles/accordion';
+import { Container, Title, Item, Inner, Header, Body } from "./styles/accordion";
 
 type AccordionPropsType = {
   children: React.ReactNode;
@@ -47,15 +40,13 @@ Accordion.Header = ({ children, ...rest }: WithChildrenType) => {
   const { toggleShow, setToggleShow } = useContext(ToggleContext);
 
   const imageProps = {
-    src: toggleShow ? '/images/icons/close-slim.png' : '/images/icons/add.png',
-    alt: toggleShow ? 'Close' : 'Open',
+    src: toggleShow ? "/images/icons/close-slim.png" : "/images/icons/add.png",
+    alt: toggleShow ? "Close" : "Open",
   };
 
   return (
     <Header
-      onClick={() =>
-        setToggleShow && setToggleShow((toggleShow: boolean) => !toggleShow)
-      }
+      onClick={() => setToggleShow && setToggleShow((toggleShow: boolean) => !toggleShow)}
       {...rest}
     >
       {children}

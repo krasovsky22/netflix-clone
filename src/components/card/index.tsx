@@ -1,5 +1,5 @@
-import React, { createContext, useState, useContext, useCallback } from 'react';
-import { WithChildrenType } from '@components/common-types';
+import React, { createContext, useState, useContext, useCallback } from "react";
+import { WithChildrenType } from "@components/common-types";
 import {
   Container,
   Group,
@@ -16,40 +16,38 @@ import {
   FeatureClose,
   Maturity,
   Content,
-} from './styles/card';
-import { NetflixContentType } from '@/types';
+} from "./styles/card";
+import { NetflixContentType } from "@/types";
 
 const DefaultItemFeature: NetflixContentType = {
-  docId: '',
-  id: '',
-  title: '',
-  description: '',
-  genre: '',
+  docId: "",
+  id: "",
+  title: "",
+  description: "",
+  genre: "",
   maturity: 0,
-  slug: '',
+  slug: "",
 };
 
 const featureContextDefaultValue = {
   showFeature: false,
-  setShowFeature: (showFeature: boolean) => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  setShowFeature: (_showFeature: boolean) => {},
   itemFeature: DefaultItemFeature,
-  setItemFeature: (itemFeature: NetflixContentType) => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  setItemFeature: (_itemFeature: NetflixContentType) => {},
 };
 
 export const FeatureContext = createContext(featureContextDefaultValue);
 
 const Card = ({ children, ...rest }: WithChildrenType) => {
-  const [showFeature, setShowFeature] = useState(
-    featureContextDefaultValue.showFeature
-  );
+  const [showFeature, setShowFeature] = useState(featureContextDefaultValue.showFeature);
   const [itemFeature, setItemFeature] = useState<NetflixContentType>(
-    featureContextDefaultValue.itemFeature
+    featureContextDefaultValue.itemFeature,
   );
 
   return (
-    <FeatureContext.Provider
-      value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}
-    >
+    <FeatureContext.Provider value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}>
       <Container {...rest}>{children}</Container>
     </FeatureContext.Provider>
   );
@@ -74,14 +72,8 @@ Card.Text = ({ children, ...rest }: WithChildrenType) => {
 type FeatureType = {
   category: string;
 };
-Card.Feature = ({
-  category,
-  children,
-  ...rest
-}: FeatureType & WithChildrenType) => {
-  const { showFeature, itemFeature, setShowFeature } = useContext(
-    FeatureContext
-  );
+Card.Feature = ({ category, children, ...rest }: FeatureType & WithChildrenType) => {
+  const { showFeature, itemFeature, setShowFeature } = useContext(FeatureContext);
 
   if (showFeature && itemFeature && setShowFeature) {
     return (
@@ -98,11 +90,10 @@ Card.Feature = ({
 
           <Group margin="30px 0" flexDirection="row" alignItems="center">
             <Maturity rating={itemFeature.maturity}>
-              {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
+              {itemFeature.maturity < 12 ? "PG" : itemFeature.maturity}
             </Maturity>
             <FeatureText fontWeight="bold">
-              {itemFeature.genre.charAt(0).toUpperCase() +
-                itemFeature.genre.slice(1)}
+              {itemFeature.genre.charAt(0).toUpperCase() + itemFeature.genre.slice(1)}
             </FeatureText>
           </Group>
 
