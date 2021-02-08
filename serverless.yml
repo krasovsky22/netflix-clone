@@ -1,4 +1,4 @@
-name: portfolio
+name: netlifx-clone
 website:
   component: '@serverless/website'
   inputs:
