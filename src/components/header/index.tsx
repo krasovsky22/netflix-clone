@@ -93,7 +93,6 @@ type SearchType = {
 Header.Search = ({ searchTerm, setSearchTerm, ...rest }: SearchType) => {
   const [searchActive, setSearchActive] = useState<boolean>(false);
 
-  console.table({ searchActive });
   return (
     <Search {...rest}>
       <SearchIcon

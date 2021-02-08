@@ -1,4 +1,6 @@
+export { default as Card } from './card';
 export { default as Form } from './form';
+export { default as Player } from './player';
 export { default as Footer } from './footer';
 export { default as Header } from './header';
 export { default as Feature } from './feature';
