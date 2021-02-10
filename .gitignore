@@ -27,3 +27,5 @@ yarn-error.log*
 .serverless/Template.json
 .serverless/Template.website.websiteBucket.json
 .eslintcache
+public/debug.log
+debug.log
